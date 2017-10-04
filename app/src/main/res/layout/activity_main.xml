@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.leandrocavalcanti.pgm_ex_view.MainActivity"
+
+    android:padding="15dp"
+    android:id="@+id/rl0">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jogador"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv1"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlCard1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_shape"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+
+                android:layout_centerVertical="true"
+                android:src="@drawable/ferrari"
+
+
+
+                />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="15dp"
+                android:text="Neymar"
+                android:textSize="24dp"
+                />
+
+            <TextView
+                android:id="@+id/idTv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\@Neymar"
+                android:layout_toRightOf="@+id/profile_image"
+
+                android:layout_below="@+id/tv2"
+                android:paddingLeft="15dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlCard1"
+            android:background="@drawable/rounded_shape"
+            android:padding="5dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn1"
+                android:text="Cancelar contrato"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv3"
+        android:text="Detalhes do Jogador"
+        android:layout_below="@+id/rl1"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:textAllCaps="true"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl2"
+        android:layout_below="@id/tv3">
+
+        <GridLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="3"
+            android:padding="15dp"
+            android:background="@drawable/rounded_shape"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batedor de Falta"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:padding="10dp"
+                />
+
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_row="0"
+                android:layout_column="2"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Batedor de penalty"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:padding="10dp"
+                />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_row="1"
+                android:layout_column="2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titular"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:padding="10dp"
+                />
+
+            <Switch
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:textOn="Sim"
+                android:textOff="Não"
+                />
+
+        </GridLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mudar n° da camisa"
+        android:layout_below="@id/rl2"
+
+        />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proxima pagina"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        />
+
+
+
+
+</RelativeLayout>
