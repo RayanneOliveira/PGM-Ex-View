@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leandrocavalcanti.pgm_ex_view.MainActivity"
+    tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.MainActivity"
 
     android:padding="15dp"
     android:id="@+id/rl0">
@@ -14,10 +14,10 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jogador"
+        android:text="Configuraçoes"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:textSize="21dp"
+        android:textSize="32dp"
         android:textStyle="bold"
         />
 
@@ -82,7 +82,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn1"
+                android:id="@+id/btnCancelarContrato"
                 android:text="Cancelar contrato"
                 />
         </RelativeLayout>
@@ -187,7 +187,7 @@
 
 
     <Button
-        android:id="@+id/btn3"
+        android:id="@+id/btnMudarCamisa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mudar n° da camisa"
@@ -196,7 +196,7 @@
         />
 
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/btnNextPage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Proxima pagina"
