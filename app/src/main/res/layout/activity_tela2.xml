@@ -7,9 +7,9 @@
 
     <TextView
         android:id="@+id/tela2tv1"
+        style="@style/Texto1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Texto1"
         android:text="Configurações" />
 
     <RelativeLayout
@@ -23,9 +23,9 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/Texto2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Texto2"
             android:text="Velocidade" />
 
         <SeekBar
@@ -44,39 +44,95 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tela2rl1"
-        android:text="Texto"
+        android:text="Inicio de jogo"
 
         />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/tela2Rl2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tela2Tv2"
-        android:orientation="vertical">
+        android:background="@drawable/rounded_shape"
+        android:paddingTop="15dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+
+        <TextView
+            style="@style/Texto2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="4">
+            android:text="Aquecer antes do jogo" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:scaleX="2"
+            android:scaleY="2"
+
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/Tela2Tv3"
+        style="@style/Texto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tela2Rl2"
+        android:text="Cor da Chuteira" />
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Tela2Tv3"
+        android:columnCount="5"
+        android:rowCount="2">
 
 
-            <TextView
-                style="@style/Texto2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Texto" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:paddingLeft="20dp" />
 
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleX="5"
-                android:scaleY="5"
-                android:layout_alignParentRight="true"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:paddingLeft="20dp" />
 
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:paddingLeft="20dp" />
 
-        </RelativeLayout>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:paddingLeft="20dp" />
 
-    </LinearLayout>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:paddingLeft="20dp" />
 
+    </GridLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:text="Imprimir Valores" />
 
 </RelativeLayout>
