@@ -9,11 +9,8 @@
         android:id="@+id/tela2tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="10dp"
-        android:text="Configurações"
-        android:textSize="32dp"
-        android:textStyle="bold" />
+        style="@style/Texto1"
+        android:text="Configurações" />
 
     <RelativeLayout
         android:id="@+id/tela2rl1"
@@ -28,10 +25,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="60dp"
-            android:text="Velocidade"
-            android:textSize="24dp"
-            android:textStyle="bold" />
+            style="@style/Texto2"
+            android:text="Velocidade" />
 
         <SeekBar
             android:id="@+id/seekBar4"
@@ -39,11 +34,49 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
             android:layout_marginLeft="60dp"
-            android:max="100"
-
-            />
+            android:max="100" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tela2Tv2"
+        style="@style/Texto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tela2rl1"
+        android:text="Texto"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tela2Tv2"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4">
+
+
+            <TextView
+                style="@style/Texto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Texto" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="5"
+                android:scaleY="5"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
