@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.Tela2Activity">
+    tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.Tela2Activity"
+    android:background="#b3ffcc"
+    android:padding="15dp">
 
     <TextView
         android:id="@+id/tela2tv1"
@@ -29,7 +31,7 @@
             android:text="Velocidade" />
 
         <SeekBar
-            android:id="@+id/seekBar4"
+            android:id="@+id/seekBarSpeed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
@@ -96,7 +98,8 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="1"
-            android:paddingLeft="20dp" />
+            android:paddingLeft="20dp"
+            />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -129,10 +132,13 @@
     </GridLayout>
 
     <Button
+        android:id="@+id/tela2BtnPrint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:text="Imprimir Valores" />
+        android:text="Imprimir Valores"
+        android:background="#00cc44"
+        style="@style/Texto2"/>
 
 </RelativeLayout>
