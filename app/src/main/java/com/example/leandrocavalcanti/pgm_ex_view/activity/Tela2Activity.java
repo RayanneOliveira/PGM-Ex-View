@@ -48,11 +48,18 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.tela2BtnPrint:
                 try {
+                    checarNulos();
                     imprimirJogador();
                 } catch (Exception e) {
-                    Toast.makeText(this, "Erro: \n" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Erro: \n" + e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 break;
+        }
+    }
+
+    private void checarNulos() throws Exception {
+        if(chkFalta == null || chkPenalty == null || switchTitular == null || seekBar == null){
+            throw new Exception("FindViewById deu errado!");
         }
     }
 
@@ -60,8 +67,18 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
         jogador = new Jogador();
         jogador.setNome("Neymar");
         jogador.setVelocidade(seekBar.getProgress());
+        if(chkFalta.isChecked()){
+            jogador.setBatedorFalta(Boolean.TRUE);
+        }else{
+            jogador.setBatedorFalta(Boolean.FALSE);
+        }
+        if(chkPenalty.isChecked()){
+            jogador.setBatedorPenalty(Boolean.TRUE);
+        }else{
+            jogador.setBatedorPenalty(Boolean.FALSE);
+        }
 
-        Toast.makeText(this, jogador.getNome() + "\nVelocidade: \n" + jogador.getVelocidade()
+        Toast.makeText(this, jogador.getNome() + "\nVelocidade: \n" + jogador.getVelocidade() + "\nBatedor de Falta: " + jogador.getBatedorFalta().toString() + "\nBatedor de Penalty: " + jogador.getBatedorPenalty()
         ,Toast.LENGTH_LONG).show();
 
 
