@@ -8,7 +8,9 @@
 
     android:padding="15dp"
     tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.MainActivity"
-    android:background="#b3ffcc">
+    android:background="@drawable/wallpaper2">
+
+
 
     <TextView
         android:id="@+id/tv1"

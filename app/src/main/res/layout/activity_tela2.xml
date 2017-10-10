@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.Tela2Activity"
-    android:background="#b3ffcc"
+    android:background="@drawable/wallpaper2"
     android:padding="15dp">
 
     <TextView
