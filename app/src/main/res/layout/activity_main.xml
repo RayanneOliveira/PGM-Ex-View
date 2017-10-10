@@ -10,8 +10,6 @@
     tools:context="com.example.leandrocavalcanti.pgm_ex_view.activity.MainActivity"
     android:background="@drawable/wallpaper2">
 
-
-
     <TextView
         android:id="@+id/tv1"
         style="@style/Texto1"

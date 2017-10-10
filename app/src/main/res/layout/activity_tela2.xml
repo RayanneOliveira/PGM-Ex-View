@@ -72,6 +72,7 @@
             android:padding="10dp"
             android:scaleX="2"
             android:scaleY="2"
+            android:id="@+id/switchAquecido"
 
             />
 

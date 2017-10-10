@@ -19,7 +19,12 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
     private CheckBox chkPenalty;
     private Switch switchTitular;
     private Button tela2BtnPrint;
-    private SeekBar seekBar;
+    private SeekBar seekBarVelocidade;
+    private Bundle extras;
+    private boolean falta;
+    private boolean penalty;
+    private boolean titular;
+    private Switch switchAquecido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,19 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
 
         pegarReferencias();
         listenar();
+        pegarExtras();
 
+        jogador = new Jogador();
+        jogador.setBatedorFalta(falta);
+        jogador.setBatedorPenalty(penalty);
+        jogador.setTitular(titular);
+    }
+
+    private void pegarExtras() {
+        extras = getIntent().getExtras();
+        falta = extras.getBoolean("falta");
+        penalty = extras.getBoolean("penalty");
+        titular = extras.getBoolean("titular");
     }
 
     private void listenar() {
@@ -40,7 +57,8 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
         chkPenalty = (CheckBox) findViewById(R.id.checkBoxPenalty);
         switchTitular = (Switch) findViewById(R.id.switchTitular);
         tela2BtnPrint = (Button) findViewById(R.id.tela2BtnPrint);
-        seekBar = (SeekBar) findViewById(R.id.seekBarSpeed);
+        seekBarVelocidade = (SeekBar) findViewById(R.id.seekBarSpeed);
+        switchAquecido = (Switch) findViewById(R.id.switchAquecido);
     }
 
     @Override
@@ -48,7 +66,6 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.tela2BtnPrint:
                 try {
-                    checarNulos();
                     imprimirJogador();
                 } catch (Exception e) {
                     Toast.makeText(this, "Erro: \n" + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -57,28 +74,14 @@ public class Tela2Activity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void checarNulos() throws Exception {
-        if(chkFalta == null || chkPenalty == null || switchTitular == null || seekBar == null){
-            throw new Exception("FindViewById deu errado!");
-        }
-    }
-
-    private void imprimirJogador() throws Exception {
-        jogador = new Jogador();
+      private void imprimirJogador() throws Exception {
         jogador.setNome("Neymar");
-        jogador.setVelocidade(seekBar.getProgress());
-        if(chkFalta.isChecked()){
-            jogador.setBatedorFalta(Boolean.TRUE);
-        }else{
-            jogador.setBatedorFalta(Boolean.FALSE);
-        }
-        if(chkPenalty.isChecked()){
-            jogador.setBatedorPenalty(Boolean.TRUE);
-        }else{
-            jogador.setBatedorPenalty(Boolean.FALSE);
-        }
 
-        Toast.makeText(this, jogador.getNome() + "\nVelocidade: \n" + jogador.getVelocidade() + "\nBatedor de Falta: " + jogador.getBatedorFalta().toString() + "\nBatedor de Penalty: " + jogador.getBatedorPenalty()
+        jogador.setVelocidade(seekBarVelocidade.getProgress());
+        jogador.setAquecido(switchAquecido.isChecked());
+
+
+        Toast.makeText(this, jogador.getNome() + "\nVelocidade: \n" + jogador.getVelocidade() + "\nBatedor de Falta: " + jogador.getBatedorFalta().toString() + "\nBatedor de Penalty: " + jogador.getBatedorPenalty() + "\nTitular: " + jogador.getTitular() + "\nAquecido: " + jogador.getAquecido()
         ,Toast.LENGTH_LONG).show();
 
 
